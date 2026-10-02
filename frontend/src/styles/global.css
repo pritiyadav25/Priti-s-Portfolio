@@ -1,0 +1,518 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --accent: #38bdf8;
+  --accent-rgb: 56, 189, 248;
+  --accent-hover: #0284c7;
+  --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+  
+  --bg-overlay: linear-gradient(180deg, rgba(8, 12, 22, 0.76) 0%, rgba(12, 17, 29, 0.82) 40%, rgba(7, 10, 18, 0.9) 100%);
+  --bg-color: #080c14;
+  --surface: rgba(15, 23, 42, 0.7);
+  
+  /* Glass Theme Design Tokens */
+  --glass-card: rgba(255, 255, 255, 0.06);
+  --glass-card-hover: rgba(255, 255, 255, 0.1);
+  --glass-card-nested: rgba(0, 0, 0, 0.25);
+  --glass-border: rgba(255, 255, 255, 0.16);
+  --glass-border-hover: rgba(255, 255, 255, 0.38);
+  --glass-nav: rgba(10, 15, 28, 0.65);
+  --glass-nav-border: rgba(255, 255, 255, 0.14);
+  
+  --glass-pill: rgba(255, 255, 255, 0.08);
+  --glass-pill-hover: rgba(255, 255, 255, 0.16);
+  --glass-pill-border: rgba(255, 255, 255, 0.2);
+  
+  --glass-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.55);
+  --glass-glow: 0 15px 35px -5px rgba(var(--accent-rgb), 0.25);
+  --glass-inset: inset 0 1px 1px 0 rgba(255, 255, 255, 0.32), inset 0 -1px 1px 0 rgba(0, 0, 0, 0.25);
+  
+  --text: #f8fafc;
+  --text-muted: #cbd5e1;
+  --text-subtle: #94a3b8;
+  --editorial-accent: rgba(255, 255, 255, 0.85);
+}
+
+body.light {
+  --accent: #0284c7;
+  --accent-rgb: 2, 132, 199;
+  --accent-hover: #0369a1;
+  --accent-gradient: linear-gradient(135deg, #0284c7 0%, #6366f1 100%);
+  
+  --bg-overlay: linear-gradient(180deg, rgba(248, 250, 252, 0.85) 0%, rgba(241, 245, 249, 0.88) 50%, rgba(226, 232, 240, 0.92) 100%);
+  --bg-color: #f1f5f9;
+  --surface: rgba(255, 255, 255, 0.85);
+  
+  --glass-card: rgba(255, 255, 255, 0.65);
+  --glass-card-hover: rgba(255, 255, 255, 0.82);
+  --glass-card-nested: rgba(255, 255, 255, 0.5);
+  --glass-border: rgba(255, 255, 255, 0.85);
+  --glass-border-hover: rgba(var(--accent-rgb), 0.45);
+  --glass-nav: rgba(255, 255, 255, 0.75);
+  --glass-nav-border: rgba(255, 255, 255, 0.9);
+  
+  --glass-pill: rgba(255, 255, 255, 0.7);
+  --glass-pill-hover: rgba(255, 255, 255, 0.95);
+  --glass-pill-border: rgba(203, 213, 225, 0.8);
+  
+  --glass-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.12);
+  --glass-glow: 0 10px 30px -5px rgba(var(--accent-rgb), 0.18);
+  --glass-inset: inset 0 1px 1px 0 rgba(255, 255, 255, 0.95), inset 0 -1px 1px 0 rgba(0, 0, 0, 0.05);
+  
+  --text: #0f172a;
+  --text-muted: #334155;
+  --text-subtle: #64748b;
+  --editorial-accent: #0f172a;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 95px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.65;
+  transition: color 0.3s ease;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+.container {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  width: 100%;
+}
+
+section {
+  padding: 2.8rem 0 1.2rem;
+  position: relative;
+}
+
+/* Typography Utilities */
+.gradient-text {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(1.9rem, 3.8vw, 2.5rem);
+  font-weight: 800;
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: clamp(0.92rem, 1.6vw, 1.02rem);
+  margin-bottom: 1.3rem;
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.55;
+}
+
+/* ========================================================
+   AUTHENTIC GLASS THEME DESIGN SYSTEM (From Reference)
+   ======================================================== */
+
+.glass-stage {
+  background: var(--glass-card);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  border-radius: 28px;
+  box-shadow: var(--glass-shadow), var(--glass-inset);
+  position: relative;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-stage:hover {
+  border-color: var(--glass-border-hover);
+}
+
+/* Authentic Glass Card */
+.glass-card {
+  background: var(--glass-card);
+  backdrop-filter: blur(24px) saturate(170%);
+  -webkit-backdrop-filter: blur(24px) saturate(170%);
+  border: 1px solid var(--glass-border);
+  border-radius: 22px;
+  box-shadow: var(--glass-shadow), var(--glass-inset);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.3s ease, 
+              box-shadow 0.3s ease,
+              background 0.3s ease;
+  position: relative;
+}
+
+.glass-card:hover {
+  background: var(--glass-card-hover);
+  border-color: var(--glass-border-hover);
+  box-shadow: var(--glass-shadow), var(--glass-glow), var(--glass-inset);
+  transform: translateY(-3px);
+}
+
+/* Nested Glass Card (Cards inside stages) */
+.glass-nested-card {
+  background: var(--glass-card-nested);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 18px;
+  box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.25s ease;
+}
+
+.glass-nested-card:hover {
+  border-color: var(--glass-border-hover);
+}
+
+/* Reference Image Architectural Corner Marks ┌ ┐ */
+.corner-bracket-tl,
+.corner-bracket-tr,
+.corner-bracket-bl,
+.corner-bracket-br {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.corner-bracket-tl {
+  top: 14px;
+  left: 14px;
+  border-top: 1.5px solid var(--editorial-accent);
+  border-left: 1.5px solid var(--editorial-accent);
+}
+
+.corner-bracket-tr {
+  top: 14px;
+  right: 14px;
+  border-top: 1.5px solid var(--editorial-accent);
+  border-right: 1.5px solid var(--editorial-accent);
+}
+
+.corner-bracket-bl {
+  bottom: 14px;
+  left: 14px;
+  border-bottom: 1.5px solid var(--editorial-accent);
+  border-left: 1.5px solid var(--editorial-accent);
+}
+
+.corner-bracket-br {
+  bottom: 14px;
+  right: 14px;
+  border-bottom: 1.5px solid var(--editorial-accent);
+  border-right: 1.5px solid var(--editorial-accent);
+}
+
+/* Signature Editorial Numbers (like 01, 02 in reference) */
+.editorial-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--editorial-accent);
+  letter-spacing: -0.03em;
+  opacity: 0.85;
+}
+
+/* Glass Navigation Bar */
+.glass-nav {
+  background: var(--glass-nav);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid var(--glass-nav-border);
+  box-shadow: 0 12px 35px -8px rgba(0, 0, 0, 0.35), var(--glass-inset);
+}
+
+/* Floating Glass Buttons & Pills */
+.btn-primary {
+  background: rgba(255, 255, 255, 0.95);
+  color: #090d16;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  padding: 0.75rem 1.6rem;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  text-decoration: none;
+  box-shadow: 0 8px 20px -4px rgba(255, 255, 255, 0.25);
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.01em;
+}
+
+body.light .btn-primary {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+}
+
+.btn-primary:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -4px rgba(255, 255, 255, 0.4);
+}
+
+body.light .btn-primary:hover {
+  background: #1e293b;
+  box-shadow: 0 10px 25px -4px rgba(15, 23, 42, 0.3);
+}
+
+.btn-accent {
+  background: var(--accent);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(var(--accent-rgb), 0.3);
+}
+
+.btn-accent:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(var(--accent-rgb), 0.45);
+}
+
+.btn-outline {
+  background: var(--glass-pill);
+  color: var(--text);
+  border: 1px solid var(--glass-pill-border);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 0.75rem 1.4rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-outline:hover {
+  background: var(--glass-pill-hover);
+  border-color: var(--glass-border-hover);
+  color: var(--text);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.3), inset 0 1px 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Circular Glass Action Button (like the zoom/plus icon in the reference image) */
+.glass-circle-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--glass-pill);
+  border: 1px solid var(--glass-pill-border);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+  text-decoration: none;
+}
+
+.glass-circle-btn:hover {
+  background: var(--glass-pill-hover);
+  border-color: var(--glass-border-hover);
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+/* Glass Pill Badge */
+.badge-pill {
+  padding: 0.4rem 1rem;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--glass-pill);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--text);
+  border: 1px solid var(--glass-pill-border);
+  box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
+  letter-spacing: 0.02em;
+}
+
+/* Glass Slider / Indicator Bar (like on right side of reference card) */
+.glass-rail {
+  width: 3px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-rail-fill {
+  width: 100%;
+  height: 40%;
+  background: #ffffff;
+  border-radius: 3px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+/* Form controls with frosted glass effect */
+input, textarea {
+  font-family: inherit;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Responsive & Mobile-Friendly Breakpoints */
+@media (max-width: 900px) {
+  section {
+    padding: 2.2rem 0 1rem;
+  }
+  .glass-stage {
+    border-radius: 22px;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 1rem;
+  }
+  section {
+    padding: 1.8rem 0 0.8rem;
+  }
+  .glass-stage {
+    border-radius: 18px;
+    padding: 1.25rem !important;
+  }
+  .glass-card {
+    border-radius: 16px;
+  }
+  .corner-bracket-tl,
+  .corner-bracket-tr,
+  .corner-bracket-bl,
+  .corner-bracket-br {
+    display: none; /* Hide decorative brackets on small mobile screens to keep layout clean */
+  }
+  .editorial-num {
+    font-size: 1.6rem;
+  }
+}
+
+/* Horizontal Compact Project Card */
+.project-card-horizontal {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 1.1rem;
+  padding: 0.95rem;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card-image-col {
+  width: 220px;
+  min-width: 200px;
+  max-width: 240px;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  background: #090d16;
+  border: 1px solid var(--glass-border);
+  flex-shrink: 0;
+  display: flex;
+}
+
+.project-card-image-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card-horizontal:hover .project-card-image-col img {
+  transform: scale(1.06);
+}
+
+@media (max-width: 720px) {
+  .project-card-horizontal {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .project-card-image-col {
+    width: 100% !important;
+    min-width: unset !important;
+    max-width: 100% !important;
+    height: 180px;
+  }
+}
