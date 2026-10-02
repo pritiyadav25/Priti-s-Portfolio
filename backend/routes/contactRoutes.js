@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const nodemailer = require('nodemailer');
-const Contact = require('../models/Contact');
+const Contact = require('../models/contact');
 
 // Initialize nodemailer transporter if credentials exist
 const createTransporter = () => {
