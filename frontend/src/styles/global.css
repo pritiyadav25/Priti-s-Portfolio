@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
@@ -514,5 +515,26 @@ input:focus, textarea:focus {
     min-width: unset !important;
     max-width: 100% !important;
     height: 180px;
+  }
+}
+
+/* Horizontal Skill Cards */
+.skill-card-horizontal {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1.8rem;
+  align-items: center;
+}
+
+.skill-items-horizontal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 0.85rem;
+}
+
+@media (max-width: 900px) {
+  .skill-card-horizontal {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
 }

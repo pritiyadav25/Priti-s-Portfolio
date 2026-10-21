@@ -25,8 +25,8 @@ const initialFaqs = [
   },
   {
     id: 'contact',
-    question: '✉️ Contact & Email',
-    answer: 'You can email Priti directly at pritiyadavit25@gmail.com, call +91-8882453789, or use the 1-click Gmail Web composer in the Contact section!'
+    question: '💬 WhatsApp & Contact',
+    answer: 'You can chat directly with Priti on WhatsApp at +91-8882453789, email her at pritiyadavit25@gmail.com, or send a message via the Contact section!'
   },
   {
     id: 'education',
@@ -108,8 +108,8 @@ export default function Chatbot() {
     if (q.includes('skill') || q.includes('react') || q.includes('node') || q.includes('tech')) {
       return 'Her core stack spans React.js, Next.js, Node.js, Express, MongoDB, MySQL, Java, REST APIs, PWA, and n8n automations!';
     }
-    if (q.includes('contact') || q.includes('email') || q.includes('hire') || q.includes('phone')) {
-      return 'You can reach her at pritiyadavit25@gmail.com, call +91-8882453789, or use the 1-click Gmail button in the Contact section!';
+    if (q.includes('contact') || q.includes('email') || q.includes('hire') || q.includes('phone') || q.includes('whatsapp')) {
+      return 'You can message Priti on WhatsApp at +91-8882453789, email at pritiyadavit25@gmail.com, or use the Contact section on this page!';
     }
     if (q.includes('education') || q.includes('college') || q.includes('degree') || q.includes('diploma') || q.includes('aktu')) {
       return 'She is currently pursuing her B.Tech in IT at GITM (AKTU) and scored 80% in her Diploma in IT from Government Girls Polytechnic Lucknow.';

@@ -26,38 +26,22 @@ export default function Experience() {
     {
       id: 1,
       indexStr: '02',
-      type: 'experience',
-      title: 'Full Stack Development Intern',
-      company: 'Techpile Technology Pvt. Ltd.',
-      location: 'Lucknow, India',
-      duration: '3 Months',
-      description: 'Developed responsive web applications with interactive frontend interfaces, backend APIs, database integration, and CRUD functionality.',
-      highlights: [
-        'Developed responsive web applications with frontend interfaces, backend APIs, database integration, and CRUD functionality',
-        'Completed 240+ hours of practical development training and collaborated actively in a 4-member development team',
-        'Constructed component-based UIs and optimized client-side state handling and API data flow'
-      ],
-      icon: <FaLaptopCode />,
-    },
-    {
-      id: 2,
-      indexStr: '03',
       type: 'certification',
-      title: 'Full Stack Web Development Certification',
+      title: 'Web Development Certification & Coaching',
       company: 'Techpile Technology',
       location: 'Lucknow, India',
-      duration: 'Certified Developer',
-      description: 'Comprehensive certification covering full-stack web architecture, React, Node.js, REST API design, database modeling, and team development workflows.',
+      duration: '45 Days (Student Training)',
+      description: 'Completed 45 days of classroom coaching and student training in Web Development, learning HTML, CSS, JavaScript, and modern full-stack web concepts.',
       highlights: [
-        'Hands-on full stack engineering curriculum with 240+ hours of guided coding',
-        'Built real-world web projects implementing authentication, database queries, and responsive design',
-        'Mastered core web development standards, Git version control, and collaborative debugging'
+        'Attended 45-day practical web development student coaching and classroom training',
+        'Gained hands-on proficiency in HTML5, CSS3, JavaScript (ES6+), and UI layouts',
+        'Developed practice web applications and earned Web Development Certification'
       ],
       icon: <FaCertificate />,
     },
     {
-      id: 3,
-      indexStr: '04',
+      id: 2,
+      indexStr: '03',
       type: 'education',
       title: 'B.Tech in Information Technology',
       company: 'Dr. A.P.J. Abdul Kalam Technical University (AKTU) – GITM',
@@ -72,8 +56,8 @@ export default function Experience() {
       icon: <FaGraduationCap />,
     },
     {
-      id: 4,
-      indexStr: '05',
+      id: 3,
+      indexStr: '04',
       type: 'education',
       title: 'Diploma in Information Technology (80%)',
       company: 'Board of Technical Education, UP – Government Girls’ Polytechnic',
